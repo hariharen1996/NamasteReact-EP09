@@ -1,0 +1,30 @@
+Assignment 09 - Optimizing our app
+
+Theory
+
+1. When and Why we need lazy?
+Lazy loading in React is an optimization technique for websites or web applications.
+When there are thousands of components in single app or in large scale applications, one single file can make the network very slow, the size of the javascript will increase, so that app becomes slow. For that purpose, we need to break/bundle the app into smaller pieces or chunks.
+
+import { lazy } from 'react'
+
+const lazy = lazy(() => import("./src/about"))
+Here, lazy us an function, which takes an callback function and named export given by react library
+
+2. What is suspense and why do we need?
+The suspense is used to display an fallback until its children has finished loading
+
+<Suspense fallback={<h1>Loading...</h1>}>
+  <About />
+</Suspense>
+
+3. Advantage of code-splitting
+Code-Splitting is a feature supported by bundlers like Webpack, Rollup, and Browserify which can create multiple bundles that can be dynamically loaded at runtime.
+The code-splitting makes our app faster and also used to optimize our app by breaking the components into smaller pieces of chunks.
+The disadvantage of code-splitting is that older browser or device not fully support some code splitting.
+
+Coding
+
+1. Create your custom hooks
+2. Try out lazy and suspense 
+3. Make your code clean
